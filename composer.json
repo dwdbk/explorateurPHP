@@ -1,0 +1,12 @@
+{
+    "name": "root/explorateur-php",
+    "authors": [
+        {
+            "name": "pierre saulay",
+            "email": "psaulay@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
