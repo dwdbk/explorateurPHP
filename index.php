@@ -29,20 +29,20 @@ if(substr($directories, 0, 4) === 'root' && !strpos($directories, '..') && file_
 
     if (is_dir($path)) {
       // echo ('<a href="index.php?dir='.$directories.'/'.$dir.'">'.$dir.'</a><br>');
-      $date = "a été modifié le : " . date ("d F Y H:i:s.", filemtime($path));
-      $filetype = mime_content_type($path);
+      $date = "Dernière modification le :        " . date ("d F Y H:i:s.", filemtime($path));
+      $filetype = "Type de fichier : " . mime_content_type($path);
       $ownerinfo = posix_getpwuid(fileowner($path));
-      $owner = $ownerinfo['name'];
+      $owner = "Propriétaire: " . $ownerinfo['name'];
       array_push($folders, ['name' => $dir, 'path' => $path, 'date' => $date, 'filetype' => $filetype, 'owner' => $owner]);
 
     }
     else {
       //echo ('<a href="index.php?dir=./'.$dir.'"download="$dir">'.$dir.'</a><br>');
       // echo ('<a href="telecharger.php?Fichier_a_telecharger='.$dir.'&chemin="index.php?dir=./'.$dir.'"download="$dir"/">'.$dir.'</a><br>');
-      $date = "a été modifié le : " . date ("d F Y H:i:s.", filemtime($path));
-      $filetype = mime_content_type($path);
+      $date = "Dernière modification le :       " . date ("d F Y H:i:s.", filemtime($path));
+      $filetype = "Type de fichier : " . mime_content_type($path);
       $ownerinfo = posix_getpwuid(fileowner($path));
-      $owner = $ownerinfo['name'];
+      $owner = "Propriétaire: " . $ownerinfo['name'];
       array_push($files, ['name' => $dir, 'path' => $path, 'date' => $date, 'filetype' => $filetype, 'owner' => $owner]);
 
 
