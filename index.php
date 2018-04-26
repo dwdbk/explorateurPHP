@@ -29,7 +29,7 @@ if(substr($directories, 0, 4) === 'root' && !strpos($directories, '..') && file_
 
     if (is_dir($path)) {
       // echo ('<a href="index.php?dir='.$directories.'/'.$dir.'">'.$dir.'</a><br>');
-      $date = "$dir a été modifié le : " . date ("F d Y H:i:s.", filemtime($path));
+      $date = "a été modifié le : " . date ("d F Y H:i:s.", filemtime($path));
       $filetype = mime_content_type($path);
       $ownerinfo = posix_getpwuid(fileowner($path));
       $owner = $ownerinfo['name'];
@@ -39,7 +39,7 @@ if(substr($directories, 0, 4) === 'root' && !strpos($directories, '..') && file_
     else {
       //echo ('<a href="index.php?dir=./'.$dir.'"download="$dir">'.$dir.'</a><br>');
       // echo ('<a href="telecharger.php?Fichier_a_telecharger='.$dir.'&chemin="index.php?dir=./'.$dir.'"download="$dir"/">'.$dir.'</a><br>');
-      $date = "$dir a été modifié le : " . date ("F d Y H:i:s.", filemtime($path));
+      $date = "a été modifié le : " . date ("d F Y H:i:s.", filemtime($path));
       $filetype = mime_content_type($path);
       $ownerinfo = posix_getpwuid(fileowner($path));
       $owner = $ownerinfo['name'];
