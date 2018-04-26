@@ -12,29 +12,29 @@
     <center>
       <img class="loupe" src="img/loupe.png">
       <h1>Explorateur de fichiers</h1>
-
       <div class="container">?
         <div class="row">
-      {% if error %}
-        <p>{{error}}</p>
-      {%else%}
-        <div class="col-10 col-lg-4 dossier">
-          <h2>Dossiers</h2>
-      {% for folder in folders %}
-          <img class="imgfolder" src="img/folder.png"><a href="?dir={{ folder.path }}">{{ folder.name }}</a><br>
-      {% endfor %}
-        </div>
-        <div class="col-10 col-lg-4"><input class="backbtn" type="button" value="Retour" onclick="history.go(-1)"></div>
-        <div class="col-10 col-lg-4 file">
-          <h2>Fichiers</h2>
-      {% for file in files %}
-          <img class="imgfile" src="img/file.png"><a href="{{ file.path }}" download>{{ file.name }}</a><br>
-      {% endfor %}
-        <div>
-      {% endif %}
+          {% if error %}
+            <p>{{error}}</p>
+          {%else%}
+            <div class="col-10 col-lg-4 dossier">
+              <h2>Dossiers</h2>
+              {% for folder in folders %}
+              <img class="imgfolder" src="img/folder.png"><a href="?dir={{ folder.path }}">{{ folder.name }}</a><br>
+              {% endfor %}
+            </div>
+            <div class="col-10 col-lg-4">
+              <input class="backbtn" type="button" value="Retour" onclick="history.go(-1)">
+            </div>
+            <div class="col-10 col-lg-4 file">
+              <h2>Fichiers</h2>
+              {% for file in files %}
+              <img class="imgfile" src="img/file.png"><a href="{{ file.path }}" download>{{ file.name }}</a><br>
+              {% endfor %}
+              {% endif %}
+            </div>
         </div>
       </div>
-
     </center>
   </body>
 </html>
