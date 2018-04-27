@@ -51,7 +51,7 @@ if(substr($directories, 0, 4) === 'root' && !strpos($directories, '..') && file_
   }
 //indiquer à twig vers quel template html on veut envoyer les données
   echo $twig->render("demo.html", array(
-//nommage des variable pour permettre à twig de les utiliser
+//nommage des variables pour permettre à twig de les utiliser
     'folders' => $folders,
     'files'   => $files,
     'path'    => $directories,

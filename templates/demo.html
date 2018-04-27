@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Explorateur de fichiers</title>
   </head>
   <body>
     <center>
       <img class="loupe" src="img/loupe.png">
-      <h1>Explorateur de fichiers</h1>
+      <h1 style="font-family: 'Cantarell', sans-serif">Explorateur de fichiers PHP</h1>
       <div class="container">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <a href="{{ path }}"><li class="breadcrumb-item active">{{ path }}</li></a>
+            <li class="breadcrumb-item active">{{ path }}</li>
           </ol>
         </nav>
         <div class="row justify-content-center">
           {% if error %}
-            <p style="background-color:red;font-size:30px">{{error}}</p>
+            <p style="font-family: 'Cantarell', sans-serif;background-color:red;font-size:30px">{{error}}</p>
           {%else%}
             <div class="col-10 col-lg-4 dossier">
               <h2>Dossiers</h2>
