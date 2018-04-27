@@ -54,6 +54,7 @@ if(substr($directories, 0, 4) === 'root' && !strpos($directories, '..') && file_
 //nommage des variable pour permettre à twig de les utiliser
     'folders' => $folders,
     'files'   => $files,
+    'path'    => $directories,
   ));
 //si directories ne contient pas la string root ou contient la string '..' ou si la cible n'existe pas
 } else {
@@ -61,6 +62,7 @@ if(substr($directories, 0, 4) === 'root' && !strpos($directories, '..') && file_
   echo $twig->render("demo.html", array(
 //créer une string erreur
     'error' => 'dossier inexistant',
+    'path'    => $directories,
   ));
 }
 ?>

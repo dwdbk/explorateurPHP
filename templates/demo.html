@@ -13,9 +13,14 @@
       <img class="loupe" src="img/loupe.png">
       <h1>Explorateur de fichiers</h1>
       <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <a href="{{ path }}"><li class="breadcrumb-item active">{{ path }}</li></a>
+          </ol>
+        </nav>
         <div class="row justify-content-center">
           {% if error %}
-            <p>{{error}}</p>
+            <p style="background-color:red;font-size:30px">{{error}}</p>
           {%else%}
             <div class="col-10 col-lg-4 dossier">
               <h2>Dossiers</h2>
